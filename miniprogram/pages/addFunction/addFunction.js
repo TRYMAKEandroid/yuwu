@@ -30,6 +30,7 @@ Page({
       }
     })
   },
+  
 
   testFunction() {
     wx.cloud.callFunction({
@@ -44,6 +45,7 @@ Page({
         })
         this.setData({
           result: JSON.stringify(res.result)
+          
         })
       },
       fail: err => {

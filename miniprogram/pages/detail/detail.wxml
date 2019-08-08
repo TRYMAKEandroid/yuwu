@@ -1,0 +1,115 @@
+<!--pages/detail/detail.wxml-->
+<view class='main'>
+  <!-- 商品轮播图 -->
+  <view class='good_swiper'>
+    <swiper autoplay='true'>
+      <swiper-item wx:for="{{good_info.good_image}}" wx:key="index">
+        <navigator>  
+          <image src='{{item}}' width='100%' style='width:100%'></image>  
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 商品轮播图 end -->
+  <!-- 商品信息 -->
+  <view class='good_info'>
+    <!-- 商品标题 -->
+    <view class='good_title'>{{good_info.good_title}}</view>
+    <!-- 商品价格 -->
+    <view class='good_price'>￥{{good_info.good_price}}</view>
+    <!-- 商品销售量和库存 -->
+    <view class='good_sales'>已售{{saleTotal}}</view>
+    <view class='good_stock'>存货{{stockTotal>=10000?'9999+':stockTotal}}</view>
+  </view>
+  <!-- 商品信息 end -->
+  <!-- 商品详情图 -->
+  <view class='good_detail'></view>
+  <!-- 商品详情图 end -->
+
+
+
+  <!-- 底部按钮 -->
+  <view class='bottom_button'>
+    <!-- 客服 -->
+    <view class='service'>
+      <image></image>
+      <text>客服</text>
+    </view>
+    <!-- 客服 end -->
+    <!-- 购物车 -->
+    <view class='cart'>
+      <image></image>
+      <text>购物车</text>  
+    </view>
+    <!-- 购物车 end -->
+    <!-- 加入购物车 -->
+    <view class='add_cart' bindtap='openSupernatant'>
+      加入购物车
+    </view>
+    <!-- 加入购物车 end -->
+    <!-- 立即购买 -->
+    <view class='buy_right_now'>
+      立即购买
+    </view>
+    <!-- 立即购买 end -->
+  </view>
+  <!-- 底部按钮 end -->
+  <!-- 遮掩布 -->
+  <view class='mask-layer' wx:if='{{isHidden}}' bindtap='closeSupernatant'></view>
+  <!-- 遮掩布 end -->
+  <!-- 购买浮层 -->
+  <view class='buy_supernatant' wx:if="{{isHidden}}" animation="{{openData}}" style='font-size:{{openStyle}}'>
+    <!-- 浮层头部 -->
+    <view class='b_top'>
+      <view class='b_good_image'>
+        <image></image>
+      </view>
+      <view class='b_good_info'>
+        <view class='b_good_price'>$998</view>
+        <view class='b_good_stock'>库存{{choose_stock|0}}件</view>
+        <view class='b_good_kinds'>请选择 {{choose_color==null?'颜色分类':choose_color}} {{choose_size==null?'尺寸':choose_size}}</view>
+      </view>
+      <view class='b_close'>
+        <button bindtap='closeSupernatant'>x</button>
+      </view>
+    </view>
+    <!-- 浮层头部 end -->
+   
+    <!-- 浮层内容 -->
+    <view class='b_content' >
+      <view class='b_good_kind'>
+        <view class='b_good_pro'>颜色分类</view>
+        <view class='b_good_keys'>
+          <view wx:for="{{good_goods.color_assign2}}" wx:key="{{index}}" 
+          class="{{index===goodIndex?'active':''}} {{item.stock<=0?'disable':''}}">
+          <text  data-color='{{item.color}}' catchtap='chooseColor'data-goodIndex='{{index}}' >{{item.color}}</text>
+          </view>
+        </view>
+      </view>
+      <view  class='b_good_kind'>
+        <view class='b_good_pro'>尺寸</view>
+        <view class='b_good_keys'>
+          <view wx:for="{{good_goods.size_assign}}" wx:key="{{index}}" 
+          class="{{index===sizeIndex?'active':''}} {{item.stock<=0?'disable':''}}">
+          <text data-size='{{item.size}}' catchtap='chooseSize' data-sizeIndex='{{index}}'>{{item.size}}</text>  
+          </view>
+        </view>
+      </view>
+      <view class='b_count'>
+        <view>购买数量</view>
+        <view class='b_counter'>
+          <button>-</button>
+          <text>1</text>
+          <button>+</button>
+        </view>
+      </view>
+    </view>
+    <!-- 浮层内容 end -->
+    <!-- 浮层底部 -->
+    <view class='b_bottom'>
+      <button>确定</button>    
+    </view>
+    <!-- 浮层底部 end -->
+  </view>
+  <!-- 购买浮层 end -->
+</view>

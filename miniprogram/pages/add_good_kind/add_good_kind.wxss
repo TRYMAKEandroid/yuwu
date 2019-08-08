@@ -1,0 +1,13 @@
+/* pages/add_good_kind/add_good_kind.wxss */
+.main{
+  padding: 5%;
+}
+
+  .good_kind{
+    font-size: 32rpx;
+    font-weight: 700;
+  }
+  .color,.size,.stock{
+    border-bottom: 1rpx solid black;
+    margin: 5%;
+  }

@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+<!-- 判断版本是否支持 -->
+<view class='main' wx:if="{{canIUse}}">
+<!-- 用户头像 -->
+  <view class='user_img'>
+    <image src='{{user_avatar}}'></image>
+  </view>
+  <!-- 用户头像 end -->
+  <!-- 获取用户信息内容 -->
+  <view class='user_content'>
+    <view>申请获取以下权限</view>
+    <text>获得你的公开信息（昵称、头像等）</text>  
+  </view>
+  <!-- 获取用户信息内容 end -->
+  <!-- 授权按钮 -->
+  <button open-type='getUserInfo' type='primary' land="zh_CN" bindgetuserinfo='getUserInfo'>授权登陆</button>
+  <!-- 授权按钮 end -->
+</view>
+<!-- 判断版本是否支持 -->
+<view wx:else>请升级微信</view>

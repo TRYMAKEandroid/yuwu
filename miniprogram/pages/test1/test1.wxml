@@ -1,0 +1,4 @@
+<!--pages/test1/test1.wxml-->
+<text>pages/test1/test1.wxml</text>
+<button bindtap='add' type='normal'>click me</button>
+<view>{{}}</view>

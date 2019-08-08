@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // let p=new Promise((resolve,reject)=>{
+    //     resolve("success")
+    //     reject("fail")
+    // })
+    // let p2=new Promise((resolve,reject)=>{
+    //     resolve("win")
+    //     reject("defial")
+    // })
+    // let p3=new Promise((resolve,reject)=>{
+    //     resolve("成功")
+    //     reject("失败")
+    // })
+    // let pa=Promise.all([p,p2,p3])
+    // pa.then((res)=>{
+    //     console.log(res)
+    // }).catch((err)=>{
+    //     console.log(err)
+    // })
+    // var number="";
+    // pa.then((res)=>{
+    //     var number2=res.reduce(function(totle,currentValue,currentIndex,arr,number){
+    //         console.log(`${totle}===${currentValue}========${currentIndex}=====${arr}======${number}`)
+    //         return totle+currentValue
+    //     })
+    //     console.log(number2)
+    // })
+    // console.log(number2)
+    var arr=[1,2,3,4,5]
+    console.log(arr.constructor)
+    arr.fill("5")
+    var x=arr.entries()
+    console.log(x.next().value);
+    console.log(x.next().value);
+    console.log(arr)
+    var arr2=[];
+    arr.forEach(function(currentValue,index,arr){
+        return arr2[index]=currentValue+1
+    })
+    console.log(arr2)
+    console.log(arr2 instanceof Array)
+    </script>
+    
+</body>
+</html>

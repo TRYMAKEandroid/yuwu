@@ -1,0 +1,297 @@
+/* pages/detail/detail.wxss */
+.main{
+  width: 750rpx;
+}
+/* 轮播图 */
+.good_swiper{
+  width: 750rpx;
+  height: 600rpx;
+  border: 1rpx solid black;
+}
+  .good_swiper>swiper{
+    width: 100%;
+    height: 100%;
+  }
+  .good_swiper>swiper>swiper-item{
+    width: 100%;
+    height: 100%;
+
+  }
+  .good_swiper>swiper>swiper-item>navigator{
+    width: 100%;
+    height: 99%;
+    
+  }
+  .good_swiper>swiper>swiper-item>navigator>image{
+    width: 100%;
+    
+  }
+/* 商品信息 */
+.good_info{
+  width: 750rpx;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+}
+  .good_info>.good_title{
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+  }
+  .good_info>.good_price{
+    height: 100rpx;
+    width: 50%;
+    line-height: 100rpx;
+    color: cyan;
+  }
+  .good_info>.good_sales{
+    height:50rpx;
+    width: 25%;
+    font-size: 32rpx;
+    color: gray;
+  }
+  .good_info>.good_stock{
+    height: 50rpx;
+    width: 25%;
+    font-size: 32rpx;
+    color:gray;
+  }
+.good_detail{
+  width: 100%;
+  height: 300px;
+  border:1rpx solid black;
+  margin-bottom: 120rpx;
+}
+/* 底部按钮 */
+.bottom_button{
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100rpx;
+  /* border: 1rpx solid black; */
+}
+  .bottom_button>.service{
+  width: 16.6%;
+  border:  1rpx solid black;
+  display: flex;
+  flex-direction: column;
+  }
+    .bottom_button>.service>image{
+      width: 30rpx;
+      height: 30rpx;
+    }
+  .bottom_button>.cart{
+  width: 16.6%;
+  border:  1rpx solid black;
+  display: flex;
+  flex-direction: column;
+  }
+    .bottom_button>.cart>image{
+      width: 30rpx;
+      height: 30rpx;
+    }
+  .bottom_button>.add_cart{
+    position: fixed;
+    right: 0rpx;
+    bottom: 0rpx;
+    height: 120rpx;
+    width:33%;
+    border: 1rpx solid black;
+    line-height: 120rpx;
+    text-align: center;
+  }
+  .bottom_button>.buy_right_now{
+    position: fixed;
+    right: 33%;
+    bottom: 0rpx;
+    height: 120rpx;
+    width:33%;
+    border: 1rpx solid black;
+    line-height: 120rpx;
+    text-align: center;  
+  }
+/* 遮掩布 */
+.mask-layer{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #000;
+  opacity: 0.2;
+  color: #fff;
+  z-index:1000;
+}
+/* 购物浮层 */
+.buy_supernatant{
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+  .buy_supernatant>.b_top{
+    width: 100%;
+    height: 249rpx;
+    background: white;
+    display: flex;
+    border-bottom: 1rpx solid black;
+    padding: 5%;
+  }
+    .buy_supernatant>.b_top>.b_good_image{
+      width: 200rpx;
+      height: 200rpx;
+      margin-right: 5%;
+    }
+      .buy_supernatant>.b_top>.b_good_image>image{
+        width: 200rpx;
+        height: 200rpx;
+      }
+    .buy_supernatant>.b_top>.b_good_info{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+      .buy_supernatant>.b_top>.b_good_info>.b_good_price{
+        color: red;
+      }
+      .buy_supernatant>.b_top>.b_good_info>.b_good_stock{
+        color: #999;
+        font-size:24rpx;
+      }
+      .buy_supernatant>.b_top>.b_good_info>.b_good_kinds{
+        color: black;
+        font-size: 24rpx;
+      }
+     .buy_supernatant>.b_top>.b_close{
+       position: absolute;
+       top: 0;
+       right: 0;
+     }
+      .buy_supernatant>.b_top>.b_close>button{
+        width: 90rpx;
+        height: 90rpx;
+        line-height: 90rpx;
+        text-align: center;
+      }
+  .buy_supernatant>.b_content{
+    width: 100%;
+    background: white;
+  }
+    .buy_supernatant>.b_content>.b_good_kind{
+      width: 100%;
+    }
+      .buy_supernatant>.b_content>.b_good_kind>.b_good_pro{
+        width: 100%;
+        height: 50rpx;
+        font-size: 38rpx;
+        font-weight: 700;
+        color: balck;
+      }
+      .buy_supernatant>.b_content>.b_good_kind>.b_good_keys{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        padding: 5%;
+      }
+         .buy_supernatant>.b_content>.b_good_kind>.b_good_keys>view{
+           
+           background: black;
+           /* border-radius: 50%; */
+           height: 50rpx;
+           line-height: 50rpx;
+           padding:0rpx 15rpx;
+           margin-right: 20rpx;
+           margin-top: 40rpx;
+          
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow:ellipsis;
+           color: white;
+           opacity: 0.5;
+           box-shadow: 0rpx 10rpx 0 0 rgba(0, 0, 0, 0.3);
+           
+         }
+         .buy_supernatant>.b_content>.b_good_kind>.b_good_keys>view.active{
+           
+           background: black;
+           /* border-radius: 50%; */
+           height: 48rpx;
+           line-height: 48rpx;
+           padding:0rpx 15rpx;
+           margin-right: 20rpx;
+           margin-top: 40rpx;
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow:ellipsis;
+           color: white;
+           opacity: 1;
+           border: 1rpx solid cyan;
+           box-shadow: 0rpx 10rpx 0 0 lightcyan;
+           color: lightcyan;
+         }
+         .buy_supernatant>.b_content>.b_good_kind>.b_good_keys>view.disable{
+           
+           background: gray;
+           /* border-radius: 50%; */
+           height: 50rpx;
+           line-height: 50rpx;
+           padding:0rpx 15rpx;
+           margin-right: 20rpx;
+           margin-top: 40rpx;
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow:ellipsis;
+           color: white;
+           opacity: 0.5;
+           box-shadow: 0rpx 10rpx 0 0 rgba(0, 0, 0, 0.3);
+           pointer-events: none;
+           text-decoration: line-through underline overline;
+         }
+         
+          .buy_supernatant>.b_content>.b_good_kind>.b_good_keys>view>text{
+           
+           font-size: 32rpx;
+
+
+           /* padding: 1%; */
+          }
+        
+    .buy_supernatant>.b_content>.b_count{
+      display: flex;
+      justify-content: space-between;
+      padding:5%；
+    }
+      .buy_supernatant>.b_content>.b_count>.b_counter{
+        display: flex;
+        flex-flow: row nowrap;
+        font-size: 38rpx;
+        font-weight: 700;
+      }
+        .buy_supernatant>.b_content>.b_count>.b_counter>button{
+          width: 90rpx;
+          height: 80rpx;
+          line-height: 80rpx;
+          text-align: center;
+        }
+        .buy_supernatant>.b_content>.b_count>.b_counter>text{
+            width: 80rpx;
+            height: 80rpx;
+            text-align: center;
+            line-height: 80rpx;
+        }
+  .buy_supernatant>.b_bottom{
+    width: 100%;
+    
+  }
+    .buy_supernatant>.b_bottom>button{
+    border-radius: 0%;
+    background: cyan;
+    color: white;
+    }

@@ -1,0 +1,43 @@
+<!--pages/uploading_good/uploading_good.wxml-->
+<view class='main'>
+<!-- 商品类型 -->
+<view class='good_kind'>
+  <picker mode='selector' value='{{index}}' range='{{range}}' range-key='name' bindchange='pickerChange'>
+    <input placeholder='商品类型' data-name='     kid' value='{{kname}}'></input>
+  </picker>
+</view>
+<!-- 商品类型 end -->
+<!-- 商品名称 -->
+<view class='good_name'>
+<input placeholder='商品名称' bindinput='inputValue' data-name="good_name"></input>
+</view>
+<!-- 商品名称 end -->
+<!-- 商品标题 -->
+<view class='good_title'>
+<input placeholder='商品标题' bindinput='inputValue' data-name="good_title"></input>
+</view>
+<!-- 商品标题 end -->
+<!-- 商品价格 -->
+<view class='good_price'>
+<input placeholder='商品价格' bindinput='inputValue' data-name="good_price"></input>
+</view>
+<!-- 商品价格 end -->
+<!-- 商品图片 -->
+<view class='good_image'>
+<view class='tempImage'>
+  <view wx:for='{{tempImage}}' wx:key='{{index}}'>
+    <image src='{{item}}' mode='aspectFill' catchtap='lookImage' data-imageurl='{{item}}'></image>
+    <view class='close'>
+      <text data-currentIndex='{{index}}'  catchtap='closeImage'>✗</text>
+    </view>
+  </view>
+</view>
+<button bindtap="uploading_image">商品图片</button>
+</view>
+<!-- 商品图片 end -->
+<!-- 商品上传确定 -->
+<view class='submit'>
+<button type='primary' bindtap='submit'>确定</button>
+</view>
+<!-- 商品上传确定 end -->
+</view>

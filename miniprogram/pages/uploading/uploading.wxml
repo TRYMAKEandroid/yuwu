@@ -1,0 +1,4 @@
+<!--pages/uploading/uploading.wxml-->
+<button catchtap="cloud_add">测试云函数add</button>
+<button catchtap="uploading_good" type="primary">上传商品信息</button>
+<button catchtap="add_good">上传商品</button>

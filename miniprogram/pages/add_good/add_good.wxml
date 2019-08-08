@@ -1,0 +1,21 @@
+<!--pages/add_good/add_good.wxml-->
+<view class='main'>
+  <view class='good_id'>
+    <input placeholder='商品编号id' bindinput='inputGoodId' data-name='good_id'></input>
+  </view>
+  <!-- <view wx:if="{{good_kind===1}}">
+    <view class='color'>
+      <input placeholder='颜色'></input>
+    </view>
+    <view class='size'>
+      <input placeholder='尺寸'></input>
+    </view>
+    <view class='stock'>
+      <input placeholder='库存'></input>
+    </view>
+    <view class='good_image'></view>
+  </view> -->
+  <view>
+    <button bindtap='submit_id'>确定id</button>
+  </view>
+</view>

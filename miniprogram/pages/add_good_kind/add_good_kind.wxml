@@ -1,0 +1,16 @@
+<!--pages/add_good_kind/add_good_kind.wxml-->
+<view class='main'>
+  <view class='good_kind'>商品类型：{{good_kind[kid]}}</view>
+  <view class='color' wx:if='{{kid===1}}'>
+    <input placeholder='颜色' bindinput='inputValue' data-name='color'></input>
+  </view>
+  <view class='size'  wx:if='{{kid===1}}'>
+    <input placeholder='尺寸' bindinput='inputValue' data-name='size'></input>
+  </view>
+  <view class='stock'>
+    <input placeholder='库存' bindinput='inputValue' data-name='stock'></input>
+  </view>
+  <view class='submit'>
+    <button bindtap='submit_add'>确定添加</button>
+  </view>
+</view>

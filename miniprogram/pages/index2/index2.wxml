@@ -1,0 +1,38 @@
+<!--pages/index2/index2.wxml-->
+
+<view class='main'>
+<!-- 轮播图 -->
+  <view class='lbt'>
+  <swiper autoplay='{{true}}'>
+    <swiper-item wx:for='{{swiperList}}' wx:key="{{index}}">
+    <navigator >
+    <image src='{{item.img_url}}' mode='aspectFill' width="100%" style="width:100%"></image>
+    </navigator>
+    </swiper-item>
+   
+  </swiper>
+  </view>
+  <!-- 轮播图 end -->
+  <!-- 搜索框 -->
+  <view class='search'>
+    <input type='text' placeholder='搜索商品'></input>
+  </view>
+  <!-- 搜索框 end -->
+  <!-- 商品列表 -->
+  <view class='goods_list'>
+    <view class='goods_container' >
+      <navigator  wx:for="{{goodList}}" wx:key="{{index}}" url='../detail/detail?id={{item.good_id}}' >
+        <view class='goods_image'>
+          <image wx:if="{{item.good_image[0]}}" src='{{item.good_image[0]}}' mode="aspectFill"></image>
+        </view>
+        <view class='goods_title'>
+          {{item.good_title}}
+        </view>
+        <view class='goods_price'>
+          ￥{{item.good_price}}
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 商品列表 end -->
+</view>
